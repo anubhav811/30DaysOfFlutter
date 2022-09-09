@@ -1,4 +1,4 @@
-class Item{
+class Item {
   final String id;
   final String name;
   final String desc;
@@ -6,5 +6,11 @@ class Item{
   final String color;
   final String image;
 
-  Item({required this.id, required this.name, required this.desc, required this.price, required this.color, required this.image});
+  Item(
+      {required this.id,
+      required this.name,
+      required this.desc,
+      required this.price,
+      required this.color,
+      required this.image});
 }
