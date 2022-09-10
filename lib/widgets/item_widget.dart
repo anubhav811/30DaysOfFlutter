@@ -6,21 +6,22 @@ class ItemWidget extends StatelessWidget {
   const ItemWidget({Key? key, required this.item}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return Card(
-      elevation: 0.0,
-      color: Colors.grey[100],
-      shape: const StadiumBorder(),
-      child: ListTile(
-        onTap: () => {"${item.name} is pressed"},
-        leading: Image.network(item.image),
-        title: Text(item.name),
-        subtitle: Text(item.desc),
-        trailing: Text(
-          "\$${item.price}",
-          textScaleFactor: 1.5,
-          style: const TextStyle(
-            color: Colors.deepPurple,
-            fontWeight: FontWeight.bold,
+    return Padding(
+      padding: const EdgeInsets.all(16.0),
+      child: Card(
+        // elevation: 0.0,
+        child: ListTile(
+          onTap: () => {"${item.name} is pressed"},
+          leading: Image.network(item.image),
+          title: Text(item.name),
+          subtitle: Text(item.desc),
+          trailing: Text(
+            "\$${item.price}",
+            textScaleFactor: 1.5,
+            style: const TextStyle(
+              color: Colors.deepPurple,
+              fontWeight: FontWeight.bold,
+            ),
           ),
         ),
       ),
