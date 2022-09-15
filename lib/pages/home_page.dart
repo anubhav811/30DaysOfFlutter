@@ -22,10 +22,8 @@ class _HomePageState extends State<HomePage> {
   }
 
   loadData() async {
-    final catalogJson = await rootBundle
-        .loadString("assets/files/catalog.json")
-        .then((value) {});
-
+    final catalogJson =
+        await rootBundle.loadString("assets/files/catalog.json");
     final decodedData = jsonDecode(catalogJson);
     var productData = decodedData["products"];
     CatalogModel.items =
@@ -39,11 +37,16 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: const Text("Home Page"),
       ),
-      body: ListView.builder(
-        itemCount: CatalogModel.items.length,
-        itemBuilder: (context, index) {
-          return ItemWidget(item: CatalogModel.items[index]);
-        },
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: (CatalogModel.items != null && CatalogModel.items.isNotEmpty)
+            ? ListView.builder(
+                itemCount: CatalogModel.items.length,
+                itemBuilder: (context, index) =>
+                    ItemWidget(item: CatalogModel.items[index]))
+            : const Center(
+                child: CircularProgressIndicator(),
+              ),
       ),
       drawer: MyDrawer(),
     );
