@@ -28,7 +28,7 @@ class HomeDetailPage extends StatelessWidget {
                     backgroundColor:
                         MaterialStateProperty.all(MyTheme.darkBluishColor),
                     shape: MaterialStateProperty.all(StadiumBorder())),
-                child: "Buy".text.make())
+                child: "Add to Cart".text.make())
           ],
         ).p32(),
       ),
@@ -56,6 +56,11 @@ class HomeDetailPage extends StatelessWidget {
                         .make(),
                     catalog.desc.text.xl.textStyle(context.captionStyle).make(),
                     10.heightBox,
+                    "Nulla ad officia officia duis dolor irure dolor sint officia ut laborum."
+                        .text
+                        .textStyle(context.captionStyle)
+                        .make()
+                        .p16()
                   ],
                 ).py64()),
           ))
