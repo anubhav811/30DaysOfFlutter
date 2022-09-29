@@ -29,5 +29,5 @@ class CartModel {
   // Remove item
   void remove(Item item) {
     _itemIds.remove(item.id);
-  }
+  } 
 }
