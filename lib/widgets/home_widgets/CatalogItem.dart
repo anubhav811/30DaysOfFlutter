@@ -31,7 +31,7 @@ class CatalogItem extends StatelessWidget {
                 buttonPadding: EdgeInsets.zero,
                 children: [
                   "\$${catalog.price}".text.bold.xl.make(),
-                  _AddToCart(catalog)
+                  _AddToCart(catalog: catalog)
                 ]).pOnly(right: 8.0)
           ],
         ))

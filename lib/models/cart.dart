@@ -1,14 +1,21 @@
 import 'package:fluttter_demo/models/catalog.dart';
 
 class CartModel {
+  static final cartModel = CartModel._internal();
+
+  CartModel._internal();
+
+  factory CartModel() => cartModel;
+
   // catalog field
   late CatalogModel _catalog;
 
-  // collection of ids
+  // Collection of IDs - store Ids of each item
   final List<int> _itemIds = [];
 
-  // Get catalog
+  // Get Catalog
   CatalogModel get catalog => _catalog;
+
   set catalog(CatalogModel newCatalog) {
     assert(newCatalog != null);
     _catalog = newCatalog;
@@ -21,12 +28,14 @@ class CartModel {
   num get totalPrice =>
       items.fold(0, (total, current) => total + current.price);
 
-  // Add item
+  // Add Item
+
   void add(Item item) {
     _itemIds.add(item.id);
   }
 
-  // Remove item
+  // Remove Item
+
   void remove(Item item) {
     _itemIds.remove(item.id);
   }
