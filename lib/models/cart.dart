@@ -29,10 +29,5 @@ class CartModel {
   // Remove item
   void remove(Item item) {
     _itemIds.remove(item.id);
-  } 
-
-  // Compare this snippet from lib\pages\cart_page.dart:
-// import 'package:flutter/material.dart';
-// import 'package:fluttter_demo/models/cart.dart';
-
+  }
 }
