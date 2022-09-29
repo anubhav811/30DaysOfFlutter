@@ -4,7 +4,6 @@ import 'package:fluttter_demo/pages/login_page.dart';
 import 'package:fluttter_demo/utils/routes.dart';
 import 'package:fluttter_demo/widgets/themes.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 import 'pages/home_page.dart';
 
 void main() {
@@ -20,7 +19,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: MyTheme.lightTheme(context),
       darkTheme: MyTheme.darkTheme(context),
-      initialRoute: MyRoutes.homeRoute,
+      initialRoute: MyRoutes.homeRoute ,
       routes: {
         '/': (context) => LoginPage(),
         MyRoutes.homeRoute: (context) => HomePage(),
